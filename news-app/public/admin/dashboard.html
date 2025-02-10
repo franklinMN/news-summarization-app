@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Admin Dashboard</h2>
+        <button id="logoutBtn">Logout</button>
+
+        <!-- 🔹 Filter Section -->
+        <h3>Filter News</h3>
+        <label for="filterTags">Filter by Tag:</label>
+        <input type="text" id="filterTags" placeholder="Enter tag">
+        <label for="filterDate">Filter by Date:</label>
+        <input type="date" id="filterDate">
+        <button onclick="filterPosts()">Apply Filter</button>
+
+        <hr>
+
+        <!-- 🔹 News Posts Display -->
+        <h3>Existing Posts</h3>
+        <div id="newsFeed"></div>
+
+        <hr>
+
+        <!-- 🔹 Add News Post Section -->
+        <h3>Add a News Post</h3>
+        <label for="title">Title:</label>
+        <input type="text" id="title">
+
+        <label for="bulletPoints">Bullet Points:</label>
+        <textarea id="bulletPoints" placeholder="Enter bullet points, one per line"></textarea>
+
+        <label for="summary">Summary (Optional):</label>
+        <textarea id="summary" placeholder="Enter short summary"></textarea>
+
+        <label for="source">Source URL:</label>
+        <input type="text" id="source">
+
+        <label for="tags">Tags (comma-separated):</label>
+        <input type="text" id="tags">
+
+        <button id="addPostBtn">Add Post</button>
+    </div>
+
+    <script src="/firebase/env.js"></script>
+    <script src="/firebase/firebase-config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
